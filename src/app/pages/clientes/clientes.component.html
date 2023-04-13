@@ -1,5 +1,8 @@
 <div class="container">
   <h1>Clientes cadastrados</h1>
   <hr>
-  <app-tabela-clientes [clientes]=clientes></app-tabela-clientes>
+  <ng-container *ngIf="clientes && clientes.length === 0">
+    <p>Parece que nenhum cliente está cadastrado. <a routerLink="/clientes/cadastrar">Cadastre um cliente.</a></p>
+  </ng-container>
+  <app-tabela-clientes *ngIf="clientes && clientes.length > 0" [clientes]="clientes"></app-tabela-clientes>
 </div>
