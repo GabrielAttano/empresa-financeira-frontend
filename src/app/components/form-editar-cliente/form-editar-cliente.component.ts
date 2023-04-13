@@ -71,8 +71,6 @@ export class FormEditarClienteComponent {
         cep: cepFormatado as string
       }
     }
-
-
     this.clienteService.alterarCliente(cliente, cpf).subscribe(() => {
       Swal.fire({
         icon: 'success',
@@ -83,12 +81,37 @@ export class FormEditarClienteComponent {
       })
     }, error => {
       console.log(error)
-      Swal.fire({
-        icon: 'error',
-        title: 'Erro ao salvar o cliente',
-        text: error.error,
-        timer: 5000
-      })
+      switch(error.status) {
+        case 0:
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro ao conectar.',
+            text: 'Não foi possível se conectar com a API.'
+          }).then(() => {
+            this.router.navigate(['/'])
+          })
+          break
+        case 400:
+          Swal.fire({
+            icon: 'warning',
+            title: 'Campo inválido.'
+          })
+          break
+        case 409:
+          Swal.fire({
+            icon: 'warning',
+            title: 'CPF já existe.',
+            text: 'O CPF informado já está cadastrado no sistema.'
+          })
+          break
+        default:
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro desconhecido',
+            text: 'checar o console para mais informações'
+          })
+          break
+      }
     })
 
   }
