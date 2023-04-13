@@ -1,7 +1,7 @@
 <div class="container text-center">
   <form [formGroup]="clienteForm" (ngSubmit)="cadastrar()">
     <div class="row justify-content-center">
-      <div class="col-6">
+      <div class="col-sm-12 col-md-6">
         <div class="form-floating mb-3">
           <input id="nome" type="text" class="form-control" formControlName="nome" placeholder="Nome"/>
           <label for="nome" class="form-label">Nome</label>
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-6">
+      <div class="col-sm-12 col-md-6">
         <div class="form-floating mb-3">
           <input id="cpf" type="text" class="form-control" formControlName="cpf" placeholder="CPF" [mask]="'000.000.000-00'"/>
           <label for="cpf" class="form-label">CPF</label>
@@ -17,13 +17,13 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-3">
+      <div class="col-sm-12 col-md-3">
         <div class="form-floating mb-3">
           <input id="telefone" type="text" class="form-control" formControlName="telefone" placeholder="Telefone" [mask]="'(00) 00000-0000'"/>
           <label for="telefone" class="form-label">Telefone</label>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-sm-12 col-md-3">
         <div class="form-floating mb-3">
           <input id="rendaMensal" type="number" min="0" class="form-control" formControlName="rendaMensal" placeholder="Renda Mensal">
           <label for="rendaMensal" class="form-label">Renda Mensal</label>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-6">
+      <div class="col-sm-12 col-md-6">
         <div class="form-floating mb-3">
           <input id="cep" type="text" class="form-control" formControlName="cep" placeholder="CEP" [mask]="'00000-000'"/>
           <label for="cep" class="form-label">CEP</label>
@@ -39,13 +39,13 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-3">
+      <div class="col-sm-12 col-md-3">
         <div class="form-floating mb-3">
           <input id="rua" type="text" class="form-control" formControlName="rua" placeholder="Rua"/>
           <label for="rua" class="form-label">Rua</label>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-sm-12 col-md-3">
         <div class="form-floating mb-3">
           <input id="numero" type="number" min="0" class="form-control" formControlName="numero"/>
           <label for="numero" class="form-label">Numero</label>
